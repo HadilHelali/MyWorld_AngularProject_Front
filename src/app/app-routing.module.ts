@@ -2,18 +2,17 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
-import { IndexComponent } from "./pages/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 
+// User pages : 
 import { HomeComponent } from "./components/home/home.component";
-import { AuthentificationComponent } from "./authentification/authentification.component";
+import { AuthentificationComponent } from "./components/authentification/authentification.component";
 import { AdministrationComponent } from "./components/administration/administration.component";
 import { LandingComponent } from "./components/landing/landing.component";
 import { RegisterationComponent } from "./components/registeration/registeration.component";
 // focus world :
 import { TimerComponent } from "./components/timer/timer.component";
+
 
 
 
