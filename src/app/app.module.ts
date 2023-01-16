@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -23,15 +23,29 @@ import { IndexComponent } from "./pages/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
+import { AuthentificationComponent } from './authentification/authentification.component';
+import { BrowserModule } from "@angular/platform-browser";
+import { AuthInterceptor, authInterceptorProviders } from "./authentification/services/auth.interceptor";
+import { TokenStorageService } from "./authentification/services/token-storage.service";
+import { AuthService } from "./authentification/services/auth.services";
+import { AuthModule } from "./authentification/auth.module";
+import { AdministrationComponent } from './administration/administration.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthentificationComponent,
+    AdministrationComponent
     // IndexComponent,
     // ProfilepageComponent,
     // RegisterpageComponent,
     // LandingpageComponent
   ],
   imports: [
+    BrowserAnimationsModule, // required animations module
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule, 
+    BrowserAnimationsModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
@@ -49,7 +63,7 @@ import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.c
     // CarouselModule.forRoot(),
     // ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
