@@ -7,11 +7,14 @@ import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.c
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 
-import { HomeComponent } from "./home/home.component";
+import { HomeComponent } from "./components/home/home.component";
 import { AuthentificationComponent } from "./authentification/authentification.component";
-import { AdministrationComponent } from "./administration/administration.component";
-import { LandingComponent } from "./landing/landing.component";
-import { RegisterationComponent } from "./registeration/registeration.component";
+import { AdministrationComponent } from "./components/administration/administration.component";
+import { LandingComponent } from "./components/landing/landing.component";
+import { RegisterationComponent } from "./components/registeration/registeration.component";
+// focus world :
+import { TimerComponent } from "./components/timer/timer.component";
+
 
 
 const routes: Routes = [
@@ -23,7 +26,9 @@ const routes: Routes = [
   { path: "profile", component: ProfilepageComponent },
   { path: "register", component: RegisterationComponent },
   { path: "Admin", component: AdministrationComponent },
-  { path: "auth", component: AuthentificationComponent,}
+  { path: "auth", component: AuthentificationComponent},
+  // focus world :
+  { path: "focus", component: TimerComponent},
 ];
 
 
@@ -36,4 +41,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {}
