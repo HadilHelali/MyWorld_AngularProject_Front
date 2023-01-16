@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { ConstantURL } from "../../ConstantsUrl";
+import { ConstantURL } from "src/app/ConstantsUrl";
 
 const type = "Bearer";
 const httpOptions = {

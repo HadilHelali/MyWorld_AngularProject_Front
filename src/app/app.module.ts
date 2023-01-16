@@ -1,8 +1,7 @@
 
 // Authentification : 
-import { AdministrationComponent } from './components/administration/administration.component';
-import { AuthentificationComponent } from './authentification/authentification.component';
-import { AuthInterceptor, authInterceptorProviders } from "./authentification/services/auth.interceptor";
+import { AuthentificationComponent } from "./components/authentification/authentification.component";
+import { authInterceptorProviders } from "./components/authentification/services/auth.interceptor";
 // Other Modules : 
 import { BrowserModule } from "@angular/platform-browser";
 import { PagesModule } from "./pages/pages.module";
@@ -34,13 +33,12 @@ import { IndexComponent } from "./pages/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
+import { AdministrationComponent } from './components/administration/administration.component';
+import { DashbordcomponementComponent } from './components/administration/dashbordcomponement/dashbordcomponement.component';
+import { AdminProfilecomponementComponent } from './components/administration/admin-profilecomponement/admin-profilecomponement.component';
+import { UserListcomponementComponent } from './components/administration/user-listcomponement/user-listcomponement.component';
 
-import { TokenStorageService } from "./authentification/services/token-storage.service";
-import { AuthService } from "./authentification/services/auth.services";
-import { AuthModule } from "./authentification/auth.module";
-import { DashbordcomponementComponent } from './administration/dashbordcomponement/dashbordcomponement.component';
-import { AdminProfilecomponementComponent } from './administration/admin-profilecomponement/admin-profilecomponement.component';
-import { UserListcomponementComponent } from './administration/user-listcomponement/user-listcomponement.component';
+
 @NgModule({
   declarations: [
     AppComponent,

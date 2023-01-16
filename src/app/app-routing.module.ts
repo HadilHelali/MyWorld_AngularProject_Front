@@ -8,8 +8,9 @@ import { RegisterpageComponent } from "./pages/examples/registerpage/registerpag
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 
 import { HomeComponent } from "./components/home/home.component";
-import { AuthentificationComponent } from "./authentification/authentification.component";
 import { AdministrationComponent } from "./components/administration/administration.component";
+import { AuthentificationComponent } from "./components/authentification/authentification.component";
+
 
 
 const routes: Routes = [
