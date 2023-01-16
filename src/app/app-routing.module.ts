@@ -7,12 +7,16 @@ import { IndexComponent } from "./pages/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
+<<<<<<< HEAD
+import { HomeComponent } from "./components/home/home.component";
+=======
 import { AuthentificationComponent } from "./authentification/authentification.component";
 import { AdministrationComponent } from "./administration/administration.component";
+>>>>>>> fd7855df22c152724616517492e0012655eed322
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
-  { path: "home", component: IndexComponent },
+  { path: "home", component: HomeComponent },
   { path: "profile", component: ProfilepageComponent },
   { path: "register", component: RegisterpageComponent },
   { path: "landing", component: LandingpageComponent },

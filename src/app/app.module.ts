@@ -23,6 +23,13 @@ import { IndexComponent } from "./pages/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
+<<<<<<< HEAD
+import { HomeComponent } from './components/home/home.component';
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent
+=======
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { BrowserModule } from "@angular/platform-browser";
 import { AuthInterceptor, authInterceptorProviders } from "./authentification/services/auth.interceptor";
@@ -35,6 +42,7 @@ import { AdministrationComponent } from './administration/administration.compone
     AppComponent,
     AuthentificationComponent,
     AdministrationComponent
+>>>>>>> fd7855df22c152724616517492e0012655eed322
     // IndexComponent,
     // ProfilepageComponent,
     // RegisterpageComponent,
