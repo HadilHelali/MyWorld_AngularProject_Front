@@ -1,0 +1,18 @@
+.scrollable {
+    overflow: scroll;
+    height: 340px;
+}
+
+.center{
+    position: absolute;
+    top: 13%;
+    left: 13%;
+    justify-content: center;
+    opacity: 0.8;
+    border-radius: 50%;
+}
+
+.btn-center{
+    position: absolute;
+    left: 40%;
+}

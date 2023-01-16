@@ -21,7 +21,7 @@ export class AuthService {
         }, httpOptions);
       }
     signUp(username: string, firstname : string ,lastname: string , email: string,password: string,):Observable<any>{
-      //todo  
+
       return this.http.post(ConstantURL.REGISTER_URL, {
         "login":username,
         "prenom":firstname,

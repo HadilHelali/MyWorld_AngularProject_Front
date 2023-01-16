@@ -3,6 +3,7 @@
 import { AuthentificationComponent } from "./components/authentification/authentification.component";
 import { authInterceptorProviders } from "./components/authentification/services/auth.interceptor";
 // Other Modules : 
+import {ChartModule} from 'primeng/chart';
 import { BrowserModule } from "@angular/platform-browser";
 import { PagesModule } from "./pages/pages.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -43,6 +44,7 @@ import { AdminProfilecomponementComponent } from './components/administration/ad
 import { UserListcomponementComponent } from './components/administration/user-listcomponement/user-listcomponement.component';
 import { UserSpaceComponent } from './user-space/user-space.component';
 import { WelcomeComponent } from './components/spacy/welcome/welcome.component';
+import { ArticleComponent } from './components/user/article/article.component';
 
 
 @NgModule({
@@ -63,6 +65,7 @@ import { WelcomeComponent } from './components/spacy/welcome/welcome.component';
     UserListcomponementComponent,
     UserSpaceComponent,
     WelcomeComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserAnimationsModule, // required animations module
@@ -76,6 +79,7 @@ import { WelcomeComponent } from './components/spacy/welcome/welcome.component';
     RouterModule,
     AppRoutingModule,
     PagesModule,
+    ChartModule,
     BsDropdownModule.forRoot(),
     ProgressbarModule.forRoot(),
     TooltipModule.forRoot(),
