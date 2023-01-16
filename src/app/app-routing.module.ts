@@ -2,17 +2,15 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
-
 import { IndexComponent } from "./pages/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
-<<<<<<< HEAD
+
 import { HomeComponent } from "./components/home/home.component";
-=======
 import { AuthentificationComponent } from "./authentification/authentification.component";
-import { AdministrationComponent } from "./administration/administration.component";
->>>>>>> fd7855df22c152724616517492e0012655eed322
+import { AdministrationComponent } from "./components/administration/administration.component";
+
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
