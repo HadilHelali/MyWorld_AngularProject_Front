@@ -1,7 +1,7 @@
 $color-magenta: #F1136C;
 $color-white : white ;
-$color-black: rgba(96, 12, 84, 0.503);
-$color-black-light: #302f3a;
+$color-black: rgba(74, 12, 96, 0.504);
+$color-black-light: #4f23698b;
 
 *{
     margin: 0;
@@ -11,10 +11,10 @@ $color-black-light: #302f3a;
 body{
     //background: $color-magenta;
     //background: linear-gradient(270deg, $color-magenta 0% , $color-white 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: 'lato';
-    height: 100vh;
+    //background-repeat: no-repeat;
+    //background-attachment: fixed;
+    //font-family: 'lato';
+    //height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,9 +27,9 @@ body{
 
 .center{
     position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 25%;
+  //transform: translate(-50%, -50%);
 }
 
 .content{
@@ -90,7 +90,7 @@ body{
     .content-btn-action{
         display: flex;
         justify-content: center;
-        margin-top: 5rem;
+        margin-top: 10rem;
         padding-bottom: 3rem;
 
         button{
@@ -130,9 +130,9 @@ body{
         transform: translateY(0px);
     }
     30%{
-        transform: translateY(-45px);
+        transform: translateY(-20px);
     }
     60%{
-        transform: translateY(-25px);
+        transform: translateY(-10px);
     }
 }

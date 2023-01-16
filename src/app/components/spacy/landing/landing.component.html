@@ -11,7 +11,7 @@
         <a
           class="navbar-brand"
           placement="bottom"
-          [routerLink]="['/home']"
+          [routerLink]="['/landing']"
         >
         <img src="./assets/img/moon.png" width="20px" /> <span> SPACY • </span> Your safe space
         </a>
@@ -53,11 +53,14 @@
           </div>
         </div>
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <h4 class="nav-link grow">Username</h4>
+          <li class="nav-item navbar-brand grow">
+            <p>You have an account ?</p>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/home']"> logout </a>
+            <button class="btn btn-warning btn-simple btn-round" type="button">
+              <a class="button-link"
+          [routerLink]="['/landing/auth']">login</a>
+            </button>
           </li>
         </ul>
       </div>
@@ -65,4 +68,8 @@
   </nav>
   <div class="wrapper">
     <div class="page-header"></div>
+    <img class="background1" src="assets/img/home/Sparkles1.png" />
+    <img class="background2" src="assets/img/home/Sparkles2.png" />
+    <div class="stars"></div>
+    <router-outlet></router-outlet>
   </div>
