@@ -12,7 +12,7 @@ import { TokenStorageService } from './services/token-storage.service';
 export class AuthentificationComponent implements OnInit {
 
   isSubmitted  =  false;
-  
+ 
   myform = new FormGroup({
     username : new FormControl('', [Validators.required]),
   password :new FormControl('', [Validators.required,Validators.minLength(4)])
@@ -23,15 +23,13 @@ export class AuthentificationComponent implements OnInit {
   ngOnInit(): void {
    
   }
-  get username() { return this.myform.get('username'); }
-
-  get password() { return this.myform.get('password'); }
-
+ 
   signIn(){
     this.isSubmitted = true;
     console.log(this.myform.valid)
     if(this.myform.valid){
-      this.authService.login(this.myform.get('username')?.value,this.myform.get('password')?.value).subscribe(
+      this.authService.login(this.myform.get('username')?.value,this.myform.get('password')?.value)
+      .subscribe(
         data => {
           console.log(data);
           this.tokenStorage.saveToken(data.token.access_token);

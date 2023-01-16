@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
+import {ChartModule} from 'primeng/chart';
 
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { ProgressbarModule } from "ngx-bootstrap/progressbar";
@@ -30,15 +31,21 @@ import { TokenStorageService } from "./authentification/services/token-storage.s
 import { AuthService } from "./authentification/services/auth.services";
 import { AuthModule } from "./authentification/auth.module";
 import { AdministrationComponent } from './administration/administration.component';
+import { DashbordcomponementComponent } from './administration/dashbordcomponement/dashbordcomponement.component';
+import { AdminProfilecomponementComponent } from './administration/admin-profilecomponement/admin-profilecomponement.component';
+import { UserListcomponementComponent } from './administration/user-listcomponement/user-listcomponement.component';
 @NgModule({
   declarations: [
     AppComponent,
     AuthentificationComponent,
-    AdministrationComponent
-    // IndexComponent,
-    // ProfilepageComponent,
-    // RegisterpageComponent,
-    // LandingpageComponent
+    AdministrationComponent,
+    DashbordcomponementComponent,
+  
+    AdminProfilecomponementComponent,
+  
+    UserListcomponementComponent,
+  
+    
   ],
   imports: [
     BrowserAnimationsModule, // required animations module
@@ -56,7 +63,8 @@ import { AdministrationComponent } from './administration/administration.compone
     // TooltipModule.forRoot(),
     // CollapseModule.forRoot(),
     // TabsModule.forRoot(),
-    PagesModule
+    PagesModule,
+    ChartModule
     // PaginationModule.forRoot(),
     // AlertModule.forRoot(),
     // BsDatepickerModule.forRoot(),
