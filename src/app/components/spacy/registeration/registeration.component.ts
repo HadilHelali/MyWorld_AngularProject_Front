@@ -1,4 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../authentification/services/auth.services';
+import { TokenStorageService } from '../../authentification/services/token-storage.service';
 
 @Component({
   selector: 'app-registeration',
@@ -6,79 +10,43 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./registeration.component.scss']
 })
 export class RegisterationComponent implements OnInit {
-  isCollapsed = true;
-  focus;
-  focus1;
-  focus2;
-  
-  constructor() {}
-  @HostListener("document:mousemove", ["$event"])
-  onMouseMove(e) {
-    var squares1 = document.getElementById("square1");
-    var squares2 = document.getElementById("square2");
-    var squares3 = document.getElementById("square3");
-    var squares4 = document.getElementById("square4");
-    var squares5 = document.getElementById("square5");
-    var squares6 = document.getElementById("square6");
-    var squares7 = document.getElementById("square7");
-    var squares8 = document.getElementById("square8");
+  isSubmitted  =  false;
+ 
+  myform = new FormGroup({
+    username : new FormControl('', [Validators.required]),
+    firstname : new FormControl('', [Validators.required]),
+    lastname : new FormControl('', [Validators.required]),
+    email : new FormControl('', [Validators.required , Validators.email]),
+    password :new FormControl('', [Validators.required,Validators.minLength(4)])
+});
 
-    var posX = e.clientX - window.innerWidth / 2;
-    var posY = e.clientY - window.innerWidth / 6;
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router:Router,private formBuilder: FormBuilder) { }
 
-    squares1.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares2.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares3.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares4.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares5.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares6.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares7.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.02 +
-      "deg) rotateX(" +
-      posY * -0.02 +
-      "deg)";
-    squares8.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.02 +
-      "deg) rotateX(" +
-      posY * -0.02 +
-      "deg)";
+  ngOnInit(): void {
+   
   }
-
-  ngOnInit() {
-  }
-  ngOnDestroy() {
+ 
+  signUp(){
+    this.isSubmitted = true;
+    console.log(this.myform.valid)
+    if(this.myform.valid){
+      this.authService.signUp(this.myform.get('username')?.value,
+                              this.myform.get('firstname')?.value,
+                              this.myform.get('lastname')?.value,
+                              this.myform.get('email')?.value,
+                              this.myform.get('password')?.value)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.router.navigateByUrl('/landing/auth');
+        },
+        err => {
+          
+        }
+      );
+      
+    }
+   
   }
 
 }

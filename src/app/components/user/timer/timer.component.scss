@@ -41,7 +41,7 @@ body{
     .content-timer{
         display: flex;
         justify-content: center;
-        padding-top:5rem;
+        padding-top:7rem;
 
         .content-h,
         .content-m,
@@ -120,7 +120,7 @@ body{
 /* animations*/
 
 .move{
-    animation: move_timer 1.3s infinite;
+    animation: move_timer 3.5s infinite;
 }
 
 @keyframes move_timer{
@@ -135,4 +135,10 @@ body{
     60%{
         transform: translateY(-10px);
     }
+}
+.playlist{
+    position: absolute;
+    top: 23%;
+    left: 26%;
+    z-index: 3;
 }

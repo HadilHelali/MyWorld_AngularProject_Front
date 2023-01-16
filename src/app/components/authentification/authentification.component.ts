@@ -31,13 +31,14 @@ export class AuthentificationComponent implements OnInit {
       this.authService.login(this.myform.get('username')?.value,this.myform.get('password')?.value)
       .subscribe(
         data => {
+          console.log("data :");
           console.log(data);
-          this.tokenStorage.saveToken(data.token.access_token);
-          this.tokenStorage.saveUser(data.user);
-          if(data.user.roles=='admin')
-             this.router.navigateByUrl('Admin');
+          this.tokenStorage.saveToken(data.access_token);
+          this.tokenStorage.saveUser(data.username);
+          if(data.role=='admin')
+             this.router.navigateByUrl('/Admin');
           else
-            this.router.navigateByUrl('/');
+            this.router.navigateByUrl('/home');
         },
         err => {
           

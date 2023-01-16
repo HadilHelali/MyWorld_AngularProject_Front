@@ -1,94 +1,64 @@
-
-    <div class="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 col-md-6 offset-lg-0 offset-md-3">
-            <div class="square square-7" id="square7"></div>
-            <div class="square square-8" id="square8"></div>
-            <div class="card card-register">
-              <div class="card-header">
-                <img
-                  alt="Card image"
-                  class="card-img"
-                  src="assets/img/square1-red.png"
-                />
-
-                <h5 class="card-title">Register</h5>
-              </div>
-              <div class="card-body">
-                <form class="form">
-                  <div
-                    class="input-group"
-                    [ngClass]="{ 'input-group-focus': focus === true }"
-                  >
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="tim-icons icon-single-02"> </i>
-                      </div>
-                    </div>
-                    <input
-                      class="form-control"
-                      placeholder="Full Name"
-                      type="text"
-                      (focus)="focus = true"
-                      (blur)="focus = false"
-                    />
-                  </div>
-                  <div
-                    class="input-group"
-                    [ngClass]="{ 'input-group-focus': focus1 === true }"
-                  >
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="tim-icons icon-email-85"> </i>
-                      </div>
-                    </div>
-                    <input
-                      class="form-control"
-                      placeholder="Email"
-                      type="text"
-                      (focus)="focus1 = true"
-                      (blur)="focus1 = false"
-                    />
-                  </div>
-                  <div
-                    class="input-group"
-                    [ngClass]="{ 'input-group-focus': focus2 === true }"
-                  >
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="tim-icons icon-lock-circle"> </i>
-                      </div>
-                    </div>
-                    <input
-                      class="form-control"
-                      placeholder="Password"
-                      type="text"
-                      (focus)="focus2 = true"
-                      (blur)="focus2 = false"
-                    />
-                  </div>
-                  <div class="form-check text-left">
-                    <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" />
-
-                      <span class="form-check-sign"> </span> I agree to the
-                      <a href="javascript:void(0)"> terms and conditions </a> .
-                    </label>
-                  </div>
-                </form>
-              </div>
-              <div class="card-footer">
-                <a
-                  class="btn btn-danger btn-round btn-lg"
-                  href="javascript:void(0)"
-                >
-                  Get Started
-                </a>
-              </div>
+<section class="ftco-section">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-5">
+              <div class="login-wrap p-4 p-md-5">
+            <div class="icon d-flex align-items-center justify-content-center">
+                <span class="fa fa-user-o"></span>
             </div>
+            <h3 class="text-center mb-4">Register</h3>
+                  <form [formGroup]="myform" (ngSubmit)="signUp()" class="login-form">
+                <!-- username-->
+                    <div class="form-group">
+                    <input #username type="text"  placeholder="username" formControlName="username"  class="form-control rounded-left"  required>
+                </div>
+
+                <div *ngIf="myform.get('username')?.hasError('required') && username && (username.dirty || username.touched)" class="help-block">
+                  <div>username is required </div>
+                </div>
+                <!-- firstname-->
+                <div class="form-group">
+                  <input #firstname type="text"  placeholder="firstname" formControlName="firstname"  class="form-control rounded-left"  required>
+                </div>
+
+                <div *ngIf="myform.get('firstname')?.hasError('required') && firstname && (firstname.dirty || firstname.touched)" class="help-block">
+                  <div>firstname is required </div>
+                </div>
+
+                <!-- lastname-->
+                <div class="form-group">
+                  <input #lastname type="text"  placeholder="lastname" formControlName="lastname"  class="form-control rounded-left"  required>
+                </div>
+
+                <div *ngIf="myform.get('lastname')?.hasError('required') && lastname && (lastname.dirty || lastname.touched)" class="help-block">
+                  <div>lastname is required </div>
+                </div>
+
+                <!-- email-->
+                <div class="form-group">
+                  <input #email type="text"  placeholder="email" formControlName="email"  class="form-control rounded-left"  required>
+                </div>
+
+                <div *ngIf="myform.get('email')?.hasError('required') && lastname && (email.dirty || email.touched)" class="help-block">
+                  <div>email is required </div>
+                </div>
+              <!-- password-->
+                <div class="form-group d-flex">
+                  <input #password formControlName="password" type="password" class="form-control rounded-left" placeholder="Password" required>
+                </div>
+         
+                <div *ngIf="password && (password.dirty || password.touched)" class="help-block">
+                    <div *ngIf="myform.get('password')?.hasError('minlength')"> Short password</div>
+                    <div *ngIf="myform.get('password')?.hasError('required')">Password is required </div>
+                  </div>
+          
+          <div class="form-group">
+              <button type="submit"  [disabled]="myform.invalid" class="btn btn-primary rounded submit p-3 px-5">Get registred</button>
           </div>
-        </div>
-        
+        </form>
       </div>
-    </div>
+          </div>
+      </div>
+  </div>
+</section>
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from '../components/authentification/services/token-storage.service';
 
 @Component({
   selector: 'app-user-space',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSpaceComponent implements OnInit {
   isCollapsed = true;
-  constructor() { }
+  username :String ="username";
+  constructor(private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
+    this.username = this.tokenStorage.getUser()
   }
 
 }
