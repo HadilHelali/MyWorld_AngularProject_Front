@@ -17,6 +17,7 @@ import { HttpClientModule } from "@angular/common/http";
 // Components : 
 import { AppComponent } from "./app.component";
 import { HomeComponent } from './components/home/home.component';
+import { TimerComponent } from './timer/timer.component';
 
 /*
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
@@ -43,7 +44,8 @@ import { AuthModule } from "./authentification/auth.module";*/
     AppComponent,
     HomeComponent,
     AuthentificationComponent,
-    AdministrationComponent
+    AdministrationComponent,
+    TimerComponent
     // IndexComponent,
     // ProfilepageComponent,
     // RegisterpageComponent,

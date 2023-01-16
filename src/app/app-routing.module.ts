@@ -10,6 +10,7 @@ import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.c
 import { HomeComponent } from "./components/home/home.component";
 import { AuthentificationComponent } from "./authentification/authentification.component";
 import { AdministrationComponent } from "./components/administration/administration.component";
+import { TimerComponent } from "./timer/timer.component";
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: "register", component: RegisterpageComponent },
   { path: "landing", component: LandingpageComponent },
   { path: "Admin", component: AdministrationComponent },
-  { path: "auth", component: AuthentificationComponent,}
+  { path: "auth", component: AuthentificationComponent},
+  { path: "focus", component: TimerComponent},
 ];
 
 
@@ -32,4 +34,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {}
