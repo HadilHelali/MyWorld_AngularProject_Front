@@ -14,6 +14,7 @@ import { RegisterationComponent } from "./components/spacy/registeration/registe
 import { TimerComponent } from "./components/user/timer/timer.component";
 import { UserSpaceComponent } from "./user-space/user-space.component";
 import { WelcomeComponent } from "./components/spacy/welcome/welcome.component";
+import { ArticleComponent } from "./components/user/article/article.component";
 
 
 
@@ -32,7 +33,9 @@ const routes: Routes = [
   children: [
     {path: '', component: HomeComponent},
     // focus world :
-    { path: "focus", component: TimerComponent},], },
+    { path: "focus", component: TimerComponent},
+    // read world :
+    { path: "read", component: ArticleComponent},], },
     // Administrator :
   { path: "Admin", component: AdministrationComponent },  
 ];
