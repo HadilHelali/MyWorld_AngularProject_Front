@@ -1,85 +1,68 @@
 <script type="text/javascript" src="assets/js/animations.js"></script>
     <script type="text/javascript" src="http://requirejs.org/docs/release/2.1.15/minified/require.js"></script>
     <script type="text/javascript" src="https://rawgit.com/ironwallaby/delaunay/master/delaunay.js"></script>
-<nav
-  class="navbar navbar-expand-lg fixed-top navbar-transparent"
-  color-on-scroll="100"
-  id="navbar-top"
->
-  <div class="container">
-    <div class="navbar-translate">
-      <a
-        class="navbar-brand"
-        placement="bottom"
+    <nav
+    class="navbar navbar-expand-lg fixed-top navbar-transparent"
+    color-on-scroll="100"
+    id="navbar-top"
+  >
+    <div class="container">
+      <div class="navbar-translate">
+        <a
+          class="navbar-brand"
+          placement="bottom"
+          [routerLink]="['/home']"
+        >
+        <img src="./assets/img/moon.png" width="20px" /> <span> SPACY • </span> Your safe space
+        </a>
+        <button
+          aria-controls="navigation-index"
+          aria-label="Toggle navigation"
+          class="navbar-toggler navbar-toggler"
+          [attr.aria-expanded]="!isCollapsed"
+          (click)="isCollapsed = !isCollapsed"
+          id="navigation"
+          type="button"
+        >
+          <span class="navbar-toggler-bar bar1"> </span>
+          <span class="navbar-toggler-bar bar2"> </span>
+          <span class="navbar-toggler-bar bar3"> </span>
+        </button>
+      </div>
+      <div
+        class="navbar-collapse justify-content-end"
+        [collapse]="isCollapsed"
+        id="navigation"
       >
-      <img src="./assets/img/moon.png" width="20px" /> <span> SPACY • </span> Your safe space
-      </a>
-        <span class="navbar-toggler-bar bar1"> </span>
-        <span class="navbar-toggler-bar bar2"> </span>
-        <span class="navbar-toggler-bar bar3"> </span>
-    </div>
-    <div
-      class="navbar-collapse justify-content-end"
-      id="navigation"
-    >
-      <div class="navbar-collapse-header">
-        <div class="row">
-          <div class="col-6 collapse-brand"><a> SPACY </a></div>
-          <div class="col-6 collapse-close text-right">
-            <button
-              aria-controls="navigation-index"
-              aria-label="Toggle navigation"
-              class="navbar-toggler"
-            >
-              <i class="tim-icons icon-simple-remove"> </i>
-            </button>
+        <div class="navbar-collapse-header">
+          <div class="row">
+            <div class="col-6 collapse-brand"><img src="./assets/img/moon.png" width="20px" /><a> SPACY • </a></div>
+            <div class="col-6 collapse-close text-right">
+              <button
+                aria-controls="navigation-index"
+                aria-label="Toggle navigation"
+                class="navbar-toggler"
+                [attr.aria-expanded]="!isCollapsed"
+                (click)="isCollapsed = !isCollapsed"
+                id="navigation"
+                type="button"
+              >
+                <i class="tim-icons icon-simple-remove"> </i>
+              </button>
+            </div>
           </div>
         </div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <h4 class="nav-link grow">Username</h4>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']"> logout </a>
+          </li>
+        </ul>
       </div>
-      <ul class="navbar-nav">
-        <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://twitter.com/CreativeTim"
-            placement="bottom"
-            target="_blank"
-            tooltip="Follow us on Twitter"
-          >
-            <i class="fab fa-twitter"> </i>
-            <p class="d-lg-none d-xl-none">Twitter</p>
-          </a>
-        </li>
-        <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://www.facebook.com/CreativeTim"
-            placement="bottom"
-            target="_blank"
-            tooltip="Like us on Facebook"
-          >
-            <i class="fab fa-facebook-square"> </i>
-            <p class="d-lg-none d-xl-none">Facebook</p>
-          </a>
-        </li>
-        <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://www.instagram.com/CreativeTimOfficial"
-            placement="bottom"
-            target="_blank"
-            tooltip="Follow us on Instagram"
-          >
-            <i class="fab fa-instagram"> </i>
-            <p class="d-lg-none d-xl-none">Instagram</p>
-          </a>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-primary mr-1" [routerLink]="['/auth']">Login</button>
-        </li>
-      </ul>
     </div>
-  </div>
-</nav>
+  </nav>
 <div class="wrapper">
   <div class="page-header">
     <div class="stars"></div>
@@ -109,10 +92,10 @@
         class="row row-grid justify-content-between align-items-center text-left"
       >
       <div class="col col-lg-2">
-        <a href="#" class="hovertext" data-hover="FOCUS WORLD">
+        <a [routerLink]="['/focus']" class="hovertext" tooltip="FOCUS WORLD">
             <img class="planet1 floating2" src="assets/img/planets/Planet2.png" />
         </a>
-        <a href="#" class="hovertext" data-hover=" WORLD">
+        <a href="#" class="hovertext" tooltip=" WORLD">
             <img class="planet3 floating1 " src="assets/img/planets/Planet3@2x.png" /></a>
       </div>
         <div class="col col-lg-6">
@@ -130,11 +113,11 @@
          
         </div>
         <div class="col col-lg-2">
-            <a href="#" class="hovertext" data-hover="CHAT WORLD"><img
+            <a href="#" class="hovertext" tooltip="CHAT WORLD"><img
             class="img-fluid planet1 floating1"
             src="assets/img/planets/Planet1.png"
           /></a>
-          <a href="#" class="hovertext" data-hover="TODO WORLD"><img 
+          <a href="#" class="hovertext" tooltip="TODO WORLD"><img 
               class="img-fluid planet2 floating2 "
               src="assets/img/planets/Planet2.png"
             /></a>

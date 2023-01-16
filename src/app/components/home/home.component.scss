@@ -47,9 +47,7 @@ img.background{
     animation: float2 6s ease-in-out infinite;
 }
 
-.PlanetName{
 
-}
 .floating2:hover{
     transform: scale(1.2);
     animation-play-state: paused;
@@ -67,7 +65,6 @@ img.background{
 .planet2 {position :absolute ; top : 0px ; right: 130px;}
 .planet3 {position :absolute ; top : 0px ; left: 130px; width: 130px}
 
-.hovertext {}
   
   .hovertext:before {
     content: attr(data-hover);
