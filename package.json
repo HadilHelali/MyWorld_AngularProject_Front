@@ -76,6 +76,7 @@
     "bootstrap": "^5.2.3",
     "chart.js": "^2.9.4",
     "chartist": "~1.3.0",
+    "compass": "^0.1.1",
     "core-js": "3.8.2",
     "font-awesome": "^4.7.0",
     "jw-bootstrap-switch-ng2": "2.0.5",

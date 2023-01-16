@@ -11,7 +11,7 @@ import { AuthService } from "./services/auth.services";
   
     ],
     declarations: [
-        AuthentificationComponent
+        //AuthentificationComponent
     ],
     providers: [AuthInterceptor,AuthService],
     entryComponents:[
