@@ -15,15 +15,15 @@
 
           <div class="row nav-tabs-danger" name="status" aria-label="Font Style" >
             <div class="col-md-2">
-              <button value="actif"  class="badge badge-pill badge-primary" (click)="setStatus('actif')">Actif</button>
+              <button value="actif"  class="badge mr-1" [ngClass]="{ 'badge-info': this.todoInput.status.valueOf()=='actif' , 'badge-primary': this.todoInput.status.valueOf()!='actif'  }" (click)="setStatus('actif')">Actif</button>
             </div>
             <div class="col-md-2">
-              <button value="waiting" class="badge badge-pill badge-primary"  (click)="setStatus('waiting')">
+              <button value="waiting" class="badge mr-1" [ngClass]="{ 'badge-info': this.todoInput.status.valueOf()=='waiting', 'badge-primary': this.todoInput.status.valueOf()!='waiting' }" (click)="setStatus('waiting')">
                 Waiting
               </button>
             </div>
             <div class="col-md-2">
-              <button value="done"  [ngClass]="buttonClass('done')"(click)="setStatus('done')">
+              <button value="done"  class="badge mr-1" [ngClass]="{ 'badge-info': this.todoInput.status.valueOf()=='done', 'badge-primary': this.todoInput.status.valueOf()!='done' }" [ngClass]="buttonClass('done')" (click)="setStatus('done')">
                 Done
               </button>
             </div>

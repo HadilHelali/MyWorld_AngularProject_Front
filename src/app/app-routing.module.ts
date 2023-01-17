@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
-import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 
 // User pages :
 import { HomeComponent } from "./components/user/home/home.component";
@@ -46,17 +45,13 @@ const routes: Routes = [
         children: [
           { path: "", component: AllArticlesComponent },
           { path: "details/:id", component: ArticleComponent },
-          { path: "add", component: AddArticleComponent },
-        ],
+          { path: "add", component: AddArticleComponent }, ],
         
       },
-      { 
-        path: "todo",
+      // todo world :
+      { path: "todo",
         children: [
-          { path: "", component: TodoComponent }
-        ],
-        
-      },
+          { path: "", component: TodoComponent } ], },
     ],
   },
   // Administrator :

@@ -49,7 +49,7 @@ export class todoService {
 
   addTodo(Todo: Todo): Observable<any> {
     return this.http.post(API_LINK, { 
-      "name": Todo.name,
+        "name": Todo.name,
        "description": Todo.description,
       "status": TodoStatusEnum.waiting},
        httpOptions);
