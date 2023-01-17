@@ -10,19 +10,19 @@
                   <form [formGroup]="myform" (ngSubmit)="signUp()" class="login-form">
                 <!-- username-->
                     <div class="form-group">
-                    <input #username type="text"  placeholder="username" formControlName="username"  class="form-control rounded-left"  required>
+                    <input  type="text"  placeholder="username" formControlName="username"  class="form-control rounded-left">
                 </div>
 
-                <div *ngIf="myform.get('username')?.hasError('required') && username && (username.dirty || username.touched)" class="help-block">
-                  <div>username is required </div>
+                <div *ngIf="myform.get('username')?.hasError('required') && myform.get('username')?.touched" class="help-block">
+                  <div class=" typography-line text-danger">username is required </div>
                 </div>
                 <!-- firstname-->
                 <div class="form-group">
-                  <input #firstname type="text"  placeholder="firstname" formControlName="firstname"  class="form-control rounded-left"  required>
+                  <input type="text"  placeholder="firstname" formControlName="firstname"  class="form-control rounded-left"  required>
                 </div>
 
-                <div *ngIf="myform.get('firstname')?.hasError('required') && firstname && (firstname.dirty || firstname.touched)" class="help-block">
-                  <div>firstname is required </div>
+                <div *ngIf="myform.get('firstname')?.hasError('required') && myform.get('firstname')?.touched" class="help-block">
+                  <div class=" typography-line text-danger">firstname is required </div>
                 </div>
 
                 <!-- lastname-->
@@ -30,8 +30,8 @@
                   <input #lastname type="text"  placeholder="lastname" formControlName="lastname"  class="form-control rounded-left"  required>
                 </div>
 
-                <div *ngIf="myform.get('lastname')?.hasError('required') && lastname && (lastname.dirty || lastname.touched)" class="help-block">
-                  <div>lastname is required </div>
+                <div *ngIf="myform.get('lastname')?.hasError('required') && myform.get('lastname')?.touched" class="help-block">
+                  <div class=" typography-line text-danger">lastname is required </div>
                 </div>
 
                 <!-- email-->
@@ -39,17 +39,17 @@
                   <input #email type="text"  placeholder="email" formControlName="email"  class="form-control rounded-left"  required>
                 </div>
 
-                <div *ngIf="myform.get('email')?.hasError('required') && lastname && (email.dirty || email.touched)" class="help-block">
-                  <div>email is required </div>
+                <div *ngIf="myform.get('email')?.invalid && myform.get('email')?.dirty" class="help-block">
+                  <div class=" typography-line text-danger">email is invalid </div>
                 </div>
               <!-- password-->
                 <div class="form-group d-flex">
                   <input #password formControlName="password" type="password" class="form-control rounded-left" placeholder="Password" required>
                 </div>
          
-                <div *ngIf="password && (password.dirty || password.touched)" class="help-block">
-                    <div *ngIf="myform.get('password')?.hasError('minlength')"> Short password</div>
-                    <div *ngIf="myform.get('password')?.hasError('required')">Password is required </div>
+                <div *ngIf="myform.get('password')?.invalid && myform.get('password')?.dirty" class="help-block">
+                    <div *ngIf="myform.get('password')?.hasError('minlength')" class=" typography-line text-danger"> Short password</div>
+                    <div *ngIf="myform.get('password')?.hasError('required')" class=" typography-line text-danger">Password is required </div>
                   </div>
           
           <div class="form-group">

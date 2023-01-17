@@ -8,35 +8,35 @@ allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-pictur
     
     <div class="content-timer">
         <div class="content-h">
-            <div class="time">{{hours}} <span>h</span></div>
+            <div class="time">{{hours}} <span>H</span></div>
             <div class="content-btn" *ngIf="show">
-                <button (click)="increment('H')"> + </button>
-                <button (click)="decrement('H')"> - </button>
+                <button (click)="increment('H')"> <i class="tim-icons icon-simple-add"></i> </button>
+                <button (click)="decrement('H')"> <i class="tim-icons icon-simple-delete"></i> </button>
             </div>
         </div>
 
         <div class="content-m">
-            <div class="time">{{minutes }}<span>m</span></div>
+            <div class="time">{{minutes }}<span>M</span></div>
             <div class="content-btn" *ngIf="show">
-                <button (click)="increment('M')"> + </button>
-                <button (click)="decrement('M')"> - </button>
+                <button (click)="increment('M')"> <i class="tim-icons icon-simple-add"></i> </button>
+                <button (click)="decrement('M')"> <i class="tim-icons icon-simple-delete"></i> </button>
             </div>
         </div>
 
         <div class="content-s">
-            <div class="time">{{seconds }}<span>s</span></div>
+            <div class="time">{{seconds }}<span>S</span></div>
             <div class="content-btn" *ngIf="show">
-                <button (click)="increment('S')"> + </button>
-                <button (click)="decrement('S')"> - </button>
+                <button (click)="increment('S')"> <i class="tim-icons icon-simple-add"></i></button>
+                <button (click)="decrement('S')"> <i class="tim-icons icon-simple-delete"></i> </button>
             </div>
         </div>
 
     </div>
 
     <div class="content-btn-action">
-        <button type="button" (click)="start()" [disabled] = "disabled">Play </button>
-        <button type="button" (click)="stop()">Stop </button>
-        <button type="button"(click)="reset()">Reset </button>
+        <button type="button" (click)="start()" [disabled] = "disabled"><i class="tim-icons icon-triangle-right-17"></i></button>
+        <button type="button" (click)="stop()"><i class="tim-icons icon-button-pause"></i> </button>
+        <button type="button"(click)="reset()"><i class="tim-icons icon-refresh-01"></i> </button>
     </div>
 </div>
 

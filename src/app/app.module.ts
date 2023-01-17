@@ -70,9 +70,7 @@ import { ArticleComponent } from './components/user/article/article.component';
   imports: [
     BrowserAnimationsModule, // required animations module
     BrowserModule,
-    FormsModule,
     ReactiveFormsModule, 
-    BrowserAnimationsModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
