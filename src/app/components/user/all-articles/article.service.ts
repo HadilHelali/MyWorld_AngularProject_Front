@@ -59,7 +59,7 @@ export class ArticleService {
   }
 
   getArticle(id: number): articleModel {
-    return this.articles[id - 1];
+    return this.articles.find(a=>a.id==id);
   }
   getArticles(): articleModel[] {
     this.articles = [];
