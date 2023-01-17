@@ -44,7 +44,7 @@ export class todoService {
     this.selectItemSubject.next(Todo);
   }
   deleteTodo(id): Observable<any> {
-    return this.http.delete(API_LINK  + `/${id}`);
+    return this.http.delete(API_LINK  + `/${id}`,httpOptions);
   }
 
   addTodo(Todo: Todo): Observable<any> {

@@ -12,9 +12,15 @@ body {
   .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); }
 
+body {
+  background-color: #401C88;
+  background: 
+  radial-gradient(#9657E6, #401C88);
+}
 a.button-link{
   color: pink ;
 }
+
 
 /* ----------- stars ------------- */
 // sparkles 
@@ -27,12 +33,14 @@ img.background{
 .background1{
     position:absolute;
     top:100px;
+
 }
 
 .background2{
     position:absolute;
     top:100px;
     right:0px;
+
 }
 
 .on-top{
@@ -91,7 +99,7 @@ img.background{
   left: 0;
   right: 0;
   display: block;
-    z-index: 0;
+  z-index: 0;
 }
 
 /* ----------- / stars ------------- */

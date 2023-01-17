@@ -1,0 +1,26 @@
+<div class="container scrollable ">
+   
+    <button [routerLink]="['/home/read/add']"
+    class="btn btn-warning btn-center">
+      Add Article
+    </button>
+    <div class="center ">
+          <div  *ngFor="let article of articles" class="card text-center" style="width: 20rem;">
+            <div class="card-header">
+                {{ article.author }}
+            </div>
+            <div class="card-body">
+          <h5 class="card-title">{{ article.title }}</h5>
+          <p class="card-text">{{ article.text }}</p>
+          <button class="btn btn-primary btn-round icon"[routerLink]="['/home/read/details', article.id]">
+            <i class="tim-icons icon-paper"></i>
+            </button> 
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+        <div class="card-footer text-muted">
+            <!-- 2 days ago -->
+        </div>
+      </div>
+    </div>
+</div>
+

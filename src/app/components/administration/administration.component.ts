@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TokenStorageService } from '../authentification/services/token-storage.service';
+import { AdminService } from './services/admin.service';
 
 @Component({
   selector: 'app-administration',
@@ -7,11 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministrationComponent implements OnInit {
   numberCard = '0';
-  constructor() { }
+  userid:number
+  user:any
+  constructor(private router:Router,private _AdminService:AdminService,private route: ActivatedRoute,private _TokenStorageService:TokenStorageService) { }
 
   ngOnInit(): void {
+    this.user=this._TokenStorageService.getUser()
   }
 
+  getuserById(id){
+    this._AdminService.userBYId(id)
+    .subscribe(
+      data => {
+        this.user=data
+      },
+      err => {
+        
+      });
+  }
 
    /**
      * Change affichage Card number
@@ -19,5 +35,15 @@ export class AdministrationComponent implements OnInit {
      */
    changeCard(numCard: string) {
     this.numberCard = numCard;
+    this.user=this._TokenStorageService.getUser()
+}
+
+getuserdetails(id){
+  this.numberCard='1'
+  this.getuserById(id)
+}
+logOut(){
+  this._TokenStorageService.signOut()
+  this.router.navigate(['/landing'])
 }
 }

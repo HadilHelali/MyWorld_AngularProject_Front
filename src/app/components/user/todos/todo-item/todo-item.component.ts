@@ -31,7 +31,11 @@ export class TodoItemComponent implements OnInit {
   }
   setStatus(status){
     this.todo.status=status
-    this.todoService.updateTodo(status,this.todo.id)
+    this.todoService.updateTodo(status,this.todo.id).subscribe(data => {
+      
+    },
+    err => {
+      })
 
   }
   toggleClass() {
@@ -55,8 +59,12 @@ export class TodoItemComponent implements OnInit {
   deleteTodo(item) {
     this.isDeleted=true;
     this.todo = item;
-    this.todoService.deleteTodo(item);
-   // this.toasterService.error(`Todo ${item.id} Deleted!`, 'Deleted Successfuly');
+    this.todoService.deleteTodo(item).subscribe( data => {
+      
+    },
+    err => {
+      console.log("eeeeeeee");});
+   
   
   }
 }

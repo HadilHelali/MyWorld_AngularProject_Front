@@ -1,0 +1,19 @@
+<div class="container center">
+    <div class="card">
+        <div class="card-header typography-line">
+            <h2 class="title">{{ article.title }}</h2>
+            <h5 class="title">Author : {{ article.author }}</h5>
+        </div>
+        <div class="card-body scrollable">
+            <p class="profile-description">
+                {{ article.text }}
+            </p>
+        </div>
+        <br/>
+      </div>
+      <button [routerLink]="['/home/read']"
+      class="btn btn-warning btn-center">
+      Go back to Article list
+    </button>
+</div>
+

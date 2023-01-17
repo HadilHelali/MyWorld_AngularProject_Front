@@ -41,7 +41,7 @@ body{
     .content-timer{
         display: flex;
         justify-content: center;
-        padding-top:5rem;
+        padding-top:7rem;
 
         .content-h,
         .content-m,
@@ -67,7 +67,8 @@ body{
             text-align: center;
 
             button{
-                font-size: 2.8rem;
+                font-size: 0.9rem;
+                padding: 1rem;
                 width: 3rem;
                 margin: 0 10px;
                 border-radius: 10px;
@@ -90,12 +91,13 @@ body{
     .content-btn-action{
         display: flex;
         justify-content: center;
-        margin-top: 10rem;
-        padding-bottom: 3rem;
+        margin-top: 8rem;
+        padding-bottom: 2rem;
 
         button{
             font-size: 5erm;
             width: 6.5rem;
+            padding: 1rem;
             margin:0 30px;
             border-radius: 20px;
             border: none;
@@ -120,7 +122,7 @@ body{
 /* animations*/
 
 .move{
-    animation: move_timer 1.3s infinite;
+    animation: move_timer 3.5s infinite;
 }
 
 @keyframes move_timer{
@@ -135,4 +137,10 @@ body{
     60%{
         transform: translateY(-10px);
     }
+}
+.playlist{
+    position: absolute;
+    top: 23%;
+    left: 26%;
+    z-index: 3;
 }
