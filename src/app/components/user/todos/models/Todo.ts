@@ -7,9 +7,9 @@ export class Todo {
     description:string;
      status: TodoStatusEnum ;
 
-  constructor(id=0,title='',date,description='',isCompleted=false ){
+  constructor(id=0,name='',date,description='',isCompleted=false ){
     this.id=id
-    this.name=title
+    this.name=name
     this.date=date
     this.description=description
     this.status== TodoStatusEnum.waiting

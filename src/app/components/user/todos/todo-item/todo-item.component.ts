@@ -53,10 +53,10 @@ export class TodoItemComponent implements OnInit {
   buttonClass(status){
     if (this.todoInput.status.valueOf()=="status") {
       // return 'list-item-success';
-      return { "btn btn-primary btn-sm disabled": true };
+      return { "badge badge-info mr-1": true , "badge badge-pill badge-primary" : false };
 
     }else{
-      return { "badge badge-pill badge-primary enabled": true };
+      return { "badge badge-primary mr-1": true };
     }
 
   }

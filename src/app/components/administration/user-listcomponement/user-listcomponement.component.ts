@@ -28,10 +28,10 @@ export class UserListcomponementComponent implements OnInit {
     this.getallUser(this.pagination)
     this.cols = [
      
-      { field: 'Nom' },
-      { field: 'Prenom' },
+      { field: 'Lastname' },
+      { field: 'Firstname' },
       { field: 'Email' },
-      { field: 'role' },
+      { field: 'Role' },
   ]
 
   }
