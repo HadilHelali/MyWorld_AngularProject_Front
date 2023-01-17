@@ -1,4 +1,6 @@
 @import "~bootstrap";
+//todos calendar style
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 /* You can add global styles to this file, and also import other style files */
 body {
@@ -10,6 +12,11 @@ body {
   .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); }
 
+body {
+  background-color: #401C88;
+  background: 
+  radial-gradient(#9657E6, #401C88);
+}
 a.button-link{
   color: pink ;
 }
