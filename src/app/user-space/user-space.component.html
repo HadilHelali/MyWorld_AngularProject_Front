@@ -57,7 +57,7 @@
             <h4 class="nav-link grow">Welcome  {{ username }} !</h4>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/landing']"> logout </a>
+            <a class="nav-link"  (click)='logOut()' > logout </a>
           </li>
         </ul>
       </div>

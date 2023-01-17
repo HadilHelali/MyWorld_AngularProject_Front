@@ -1,0 +1,43 @@
+<div class="content">
+    <div class="container-fluid">     
+     
+      <div class="rowcomtenet ">
+
+       <br>
+<h4>Recheche User</h4> 
+
+        <form [formGroup]="myform" class="login-form">
+          <div class="row">
+          <div class="form-group col-sm ">
+            Nom
+              <input type="text"  
+              placeholder="nom" formControlName="nom"  
+              class="form-control rounded-left"  >
+          </div>
+
+          <div class="form-group col-sm ">
+            Prenom
+              <input type="text"  
+              placeholder="prenom" formControlName="prenom"  
+              class="form-control rounded-left"  >
+          </div>
+
+          <div class="form-group col-sm ">
+            role
+            <input type="text"  
+            placeholder="role" formControlName="roles"  
+            class="form-control rounded-left"  >
+        </div>
+
+    
+   
+    <div class="form-group col-sm">
+        <button type="submit" (click)="valide()" [disabled]="!myform.dirty" class="btn btn-primary rounded submit p-3 px-5">valider</button>
+    </div>
+  </div>
+  </form>
+</div>
+<br>
+  <app-user-listcomponement (userid)="getuserdetails($event)" [user]="newuser"></app-user-listcomponement>
+</div>    
+</div> 

@@ -10,6 +10,11 @@ body {
   .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); }
 
+body {
+  background-color: #401C88;
+  background: 
+  radial-gradient(#9657E6, #401C88);
+}
 a.button-link{
   color: pink ;
 }
