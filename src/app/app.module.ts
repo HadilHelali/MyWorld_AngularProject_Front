@@ -45,6 +45,7 @@ import { UserListcomponementComponent } from './components/administration/user-l
 import { UserSpaceComponent } from './user-space/user-space.component';
 import { WelcomeComponent } from './components/spacy/welcome/welcome.component';
 import { ArticleComponent } from './components/user/article/article.component';
+import { AllArticlesComponent } from './components/user/all-articles/all-articles.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { ArticleComponent } from './components/user/article/article.component';
     UserSpaceComponent,
     WelcomeComponent,
     ArticleComponent,
+    AllArticlesComponent,
   ],
   imports: [
     BrowserAnimationsModule, // required animations module
