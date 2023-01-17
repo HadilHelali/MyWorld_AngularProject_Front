@@ -4,7 +4,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 
-// User pages : 
+// User pages :
 import { HomeComponent } from "./components/user/home/home.component";
 import { AuthentificationComponent } from "./components/authentification/authentification.component";
 import { AdministrationComponent } from "./components/administration/administration.component";
@@ -15,41 +15,51 @@ import { TimerComponent } from "./components/user/timer/timer.component";
 import { UserSpaceComponent } from "./user-space/user-space.component";
 import { WelcomeComponent } from "./components/spacy/welcome/welcome.component";
 import { ArticleComponent } from "./components/user/article/article.component";
+import { AllArticlesComponent } from "./components/user/all-articles/all-articles.component";
 import { AuthGuard } from "./guards/auth-guard";
-
-
-
-
+import { AddArticleComponent } from "./components/user/add-article/add-article.component";
 const routes: Routes = [
   { path: "", redirectTo: "landing", pathMatch: "full" },
-    // the landing page before login :
-    { path: "landing", component: LandingComponent ,
+  // the landing page before login :
+  {
+    path: "landing",
+    component: LandingComponent,
     children: [
-      {path: '', component: WelcomeComponent},
-      {path: 'auth', component: AuthentificationComponent},
-      { path: "register", component: RegisterationComponent }
-    ]},
-    // the home page after login :
-  { path: "home", component: UserSpaceComponent , canActivate: [AuthGuard] ,
-  children: [
-    {path: '', component: HomeComponent},
-    // focus world :
-    { path: "focus", component: TimerComponent},
-    // read world :
-    { path: "read", component: ArticleComponent},], },
-    // Administrator :
-  { path: "Admin", component: AdministrationComponent , canActivate: [AuthGuard] },  
+      { path: "", component: WelcomeComponent },
+      { path: "auth", component: AuthentificationComponent },
+      { path: "register", component: RegisterationComponent },
+    ],
+  },
+  // the home page after login :
+  {
+    path: "home",
+    component: UserSpaceComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: "", component: HomeComponent },
+      // focus world :
+      { path: "focus", component: TimerComponent },
+      // read world :
+      {
+        path: "read",
+        children: [
+          { path: "", component: AllArticlesComponent },
+          { path: "details/:id", component: ArticleComponent },
+          { path: "add", component: AddArticleComponent },
+        ],
+      },
+    ],
+  },
+  // Administrator :
+  {
+    path: "Admin",
+    component: AdministrationComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
-
 @NgModule({
-  imports: [
-    CommonModule,
-    BrowserModule,
-    
-    RouterModule.forRoot(routes)
-  ],
-  exports: [RouterModule]
+  imports: [CommonModule, BrowserModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-
 export class AppRoutingModule {}

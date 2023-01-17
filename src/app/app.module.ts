@@ -48,6 +48,8 @@ import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.c
 import { UserSpaceComponent } from './user-space/user-space.component';
 import { WelcomeComponent } from './components/spacy/welcome/welcome.component';
 import { ArticleComponent } from './components/user/article/article.component';
+import { AllArticlesComponent } from './components/user/all-articles/all-articles.component';
+import { AddArticleComponent } from './components/user/add-article/add-article.component';
 import { HomeComponent } from "./components/user/home/home.component";
 
 
@@ -71,6 +73,8 @@ import { HomeComponent } from "./components/user/home/home.component";
     UserSpaceComponent,
     WelcomeComponent,
     ArticleComponent,
+    AllArticlesComponent,
+    AddArticleComponent,
   ],
   imports: [
     BrowserAnimationsModule, // required animations module

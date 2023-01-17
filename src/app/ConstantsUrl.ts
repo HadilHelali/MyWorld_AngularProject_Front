@@ -11,5 +11,8 @@ export class ConstantURL {
     public static readonly userById_Url= environment.GlobalApiUrl+"admin/userById"
     public static readonly UpdateuserById_Url=environment.GlobalApiUrl+"admin/updateuser"
     public static readonly REGISTER_URL = environment.GlobalApiUrl+"auth/registre"
+    public static readonly ARTICLES_LIST_URL = environment.GlobalApiUrl+"article/articleList"
+    public static readonly ARTICLE_URL = environment.GlobalApiUrl+"article/articleList"
+    public static readonly ADD_ARTICLE_URL = environment.GlobalApiUrl+"article"
     
 }
