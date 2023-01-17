@@ -17,6 +17,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from './components/user/home/home.component';
 import { RegisterationComponent } from './components/spacy/registeration/registeration.component';
+
+//todos
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 ///// focus world : 
 import { TimerComponent } from './components/user/timer/timer.component';
 
@@ -43,6 +50,9 @@ import { AdminProfilecomponementComponent } from './components/administration/ad
 import { UserListcomponementComponent } from './components/administration/user-listcomponement/user-listcomponement.component';
 import { UserSpaceComponent } from './user-space/user-space.component';
 import { WelcomeComponent } from './components/spacy/welcome/welcome.component';
+import { TodoComponent } from './components/user/todos/todo/todo.component';
+import { ListTodosComponent } from './components/user/todos/list-todos/list-todos.component';
+import { TodoItemComponent } from './components/user/todos/todo-item/todo-item.component';
 
 
 @NgModule({
@@ -55,6 +65,7 @@ import { WelcomeComponent } from './components/spacy/welcome/welcome.component';
     AuthentificationComponent,
     //// Focus World : 
     TimerComponent,
+
     ////////////////////////////
     // admin
     AdministrationComponent,
@@ -63,6 +74,9 @@ import { WelcomeComponent } from './components/spacy/welcome/welcome.component';
     UserListcomponementComponent,
     UserSpaceComponent,
     WelcomeComponent,
+    TodoComponent,
+    ListTodosComponent,
+    TodoItemComponent,
   ],
   imports: [
     BrowserAnimationsModule, // required animations module
@@ -85,7 +99,13 @@ import { WelcomeComponent } from './components/spacy/welcome/welcome.component';
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonToggleModule
+   
+
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
