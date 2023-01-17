@@ -16,7 +16,8 @@ import { UserSpaceComponent } from "./user-space/user-space.component";
 import { WelcomeComponent } from "./components/spacy/welcome/welcome.component";
 import { ArticleComponent } from "./components/user/article/article.component";
 import { AllArticlesComponent } from "./components/user/all-articles/all-articles.component";
-
+import { AuthGuard } from "./guards/auth-guard";
+import { AddArticleComponent } from "./components/user/add-article/add-article.component";
 const routes: Routes = [
   { path: "", redirectTo: "landing", pathMatch: "full" },
   // the landing page before login :
@@ -33,6 +34,7 @@ const routes: Routes = [
   {
     path: "home",
     component: UserSpaceComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: "", component: HomeComponent },
       // focus world :
@@ -40,13 +42,20 @@ const routes: Routes = [
       // read world :
       {
         path: "read",
-        component: AllArticlesComponent,
-        children: [{ path: ":id", component: ArticleComponent }],
+        children: [
+          { path: "", component: AllArticlesComponent },
+          { path: "details/:id", component: ArticleComponent },
+          { path: "add", component: AddArticleComponent },
+        ],
       },
     ],
   },
   // Administrator :
-  { path: "Admin", component: AdministrationComponent },
+  {
+    path: "Admin",
+    component: AdministrationComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 <div class="container scrollable ">
-    <button [routerLink]="['/home']"
+   
+    <button [routerLink]="['/home/read/add']"
     class="btn btn-warning btn-center">
       Add Article
     </button>
@@ -11,16 +12,15 @@
             <div class="card-body">
           <h5 class="card-title">{{ article.title }}</h5>
           <p class="card-text">{{ article.text }}</p>
-          <button class="btn btn-primary btn-round icon">
+          <button class="btn btn-primary btn-round icon"[routerLink]="['/home/read/details', article.id]">
             <i class="tim-icons icon-paper"></i>
             </button> 
           <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
         <div class="card-footer text-muted">
-            2 days ago
+            <!-- 2 days ago -->
         </div>
       </div>
     </div>
-
 </div>
 

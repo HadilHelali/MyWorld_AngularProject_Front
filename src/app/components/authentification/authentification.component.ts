@@ -11,7 +11,8 @@ import { TokenStorageService } from './services/token-storage.service';
 })
 export class AuthentificationComponent implements OnInit {
 
-  isSubmitted  =  false;
+  isSubmitted : Boolean  =  false;
+  error: Boolean =false;
  
   myform = new FormGroup({
     username : new FormControl('', [Validators.required]),
@@ -33,15 +34,15 @@ export class AuthentificationComponent implements OnInit {
         data => {
           console.log("data :");
           console.log(data);
-          this.tokenStorage.saveToken(data.access_token);
-          this.tokenStorage.saveUser(data.username);
-          if(data.role=='admin')
+          this.tokenStorage.saveToken(data.token.access_token);
+          this.tokenStorage.saveUser(data.user);
+          if(data.token.role=='admin')
              this.router.navigateByUrl('/Admin');
           else
             this.router.navigateByUrl('/home');
         },
         err => {
-          
+          this.error=true;
         }
       );
       

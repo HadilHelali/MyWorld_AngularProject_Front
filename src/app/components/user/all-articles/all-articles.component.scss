@@ -23,9 +23,9 @@ body {
     padding: 1;
 }
 .container{
-
+    bottom: 10%;
     position: absolute; 
-    top: 20%;
+    top: 15%;
     left: 13%;
 }
 .card-text{
@@ -34,6 +34,8 @@ body {
     overflow: hidden; 
 }
 .center{
+    top: 10%;
+    position: relative; 
     display: flex; 
     flex-direction: row;
     justify-content: space-between;
@@ -42,7 +44,9 @@ body {
     border-radius: 50%;
 }
 
-// .btn-center{
-//     position: absolute;
-//     left: 40%;
-// }
+.btn-center{
+    position: absolute;
+    top: 0%;
+    left: 40%;
+    // bottom: 15%;
+}

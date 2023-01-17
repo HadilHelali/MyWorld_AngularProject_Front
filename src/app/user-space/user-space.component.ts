@@ -12,7 +12,7 @@ export class UserSpaceComponent implements OnInit {
   constructor(private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
-    this.username = this.tokenStorage.getUser()
+    this.username = this.tokenStorage.getUser().login
   }
 
 }
