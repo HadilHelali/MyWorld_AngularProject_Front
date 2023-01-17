@@ -1,3 +1,13 @@
+
+ ::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+ }
+
+ ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 2px;
+ }
 .scrollable {
     overflow: scroll;
     height: 340px;
@@ -15,4 +25,21 @@
 .btn-center{
     position: absolute;
     left: 40%;
+}
+
+.title{
+    position: relative;
+    color: bisque;
+    font-size: 25px;
+    left: 40%;
+}
+.profile-description{
+    padding-left: 10px;
+    font-size: 18px;
+    color: white;
+}
+.author{
+    left: 70%;
+    color: bisque;
+    font-size: medium;
 }
