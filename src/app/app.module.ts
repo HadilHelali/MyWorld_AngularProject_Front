@@ -16,13 +16,17 @@ import { HttpClientModule } from "@angular/common/http";
 
 // Components : 
 import { AppComponent } from "./app.component";
-import { HomeComponent } from './components/user/home/home.component';
+import { AdministrationComponent } from './components/administration/administration.component';
+import { DashbordcomponementComponent } from './components/administration/dashbordcomponement/dashbordcomponement.component';
+import { AdminProfilecomponementComponent } from './components/administration/admin-profilecomponement/admin-profilecomponement.component';
+import { UserListcomponementComponent } from './components/administration/user-listcomponement/user-listcomponement.component';
+
 import { RegisterationComponent } from './components/spacy/registeration/registeration.component';
 ///// focus world : 
 import { TimerComponent } from './components/user/timer/timer.component';
 
-import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { ProgressbarModule } from "ngx-bootstrap/progressbar";
+import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { CollapseModule } from "ngx-bootstrap/collapse";
 import { TabsModule } from "ngx-bootstrap/tabs";
@@ -31,6 +35,8 @@ import { AlertModule } from "ngx-bootstrap/alert";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { CarouselModule } from "ngx-bootstrap/carousel";
 import { ModalModule } from "ngx-bootstrap/modal";
+import { AdminService } from "./components/administration/services/admin.service";
+import { RechercheUserComponent } from './components/administration/recherche-user/recherche-user.component';
 import { LandingComponent } from './components/spacy/landing/landing.component';
 /*
 import { IndexComponent } from "./pages/index/index.component";
@@ -38,13 +44,11 @@ import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.c
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 */
-import { AdministrationComponent } from './components/administration/administration.component';
-import { DashbordcomponementComponent } from './components/administration/dashbordcomponement/dashbordcomponement.component';
-import { AdminProfilecomponementComponent } from './components/administration/admin-profilecomponement/admin-profilecomponement.component';
-import { UserListcomponementComponent } from './components/administration/user-listcomponement/user-listcomponement.component';
+
 import { UserSpaceComponent } from './user-space/user-space.component';
 import { WelcomeComponent } from './components/spacy/welcome/welcome.component';
 import { ArticleComponent } from './components/user/article/article.component';
+import { HomeComponent } from "./components/user/home/home.component";
 
 
 @NgModule({
@@ -63,6 +67,7 @@ import { ArticleComponent } from './components/user/article/article.component';
     DashbordcomponementComponent,
     AdminProfilecomponementComponent,
     UserListcomponementComponent,
+    RechercheUserComponent,
     UserSpaceComponent,
     WelcomeComponent,
     ArticleComponent,
@@ -76,6 +81,13 @@ import { ArticleComponent } from './components/user/article/article.component';
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
+    BsDropdownModule.forRoot(),
+    ProgressbarModule.forRoot(),
+    TooltipModule.forRoot(),
+    CollapseModule.forRoot(),
+    TabsModule.forRoot(),
+    PagesModule,
+    ChartModule,
     PagesModule,
     ChartModule,
     BsDropdownModule.forRoot(),
@@ -89,7 +101,7 @@ import { ArticleComponent } from './components/user/article/article.component';
     ModalModule.forRoot(),
     CollapseModule.forRoot()
   ],
-  providers: [authInterceptorProviders],
+  providers: [AdminService,authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

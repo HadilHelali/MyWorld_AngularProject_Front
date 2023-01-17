@@ -4,7 +4,6 @@ import { Observable } from "rxjs";
 import { ConstantURL } from "src/app/ConstantsUrl";
 import { TokenStorageService } from "./token-storage.service";
 
-const type = "Bearer";
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -34,7 +33,7 @@ export class AuthService {
     }
 
     isConnected() : boolean {
-      if (this.tokenStorageService.getUser().username === undefined )
+      if (this.tokenStorageService.getUser().login === undefined )
       return false
       else return true
 
