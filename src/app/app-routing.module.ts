@@ -18,6 +18,7 @@ import { ArticleComponent } from "./components/user/article/article.component";
 import { AllArticlesComponent } from "./components/user/all-articles/all-articles.component";
 import { AuthGuard } from "./guards/auth-guard";
 import { AddArticleComponent } from "./components/user/add-article/add-article.component";
+import { TodoComponent } from "./components/user/todos/todo/todo.component";
 const routes: Routes = [
   { path: "", redirectTo: "landing", pathMatch: "full" },
   // the landing page before login :
@@ -47,6 +48,14 @@ const routes: Routes = [
           { path: "details/:id", component: ArticleComponent },
           { path: "add", component: AddArticleComponent },
         ],
+        
+      },
+      { 
+        path: "todo",
+        children: [
+          { path: "", component: TodoComponent }
+        ],
+        
       },
     ],
   },

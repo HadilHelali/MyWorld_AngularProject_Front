@@ -23,12 +23,6 @@ import { UserListcomponementComponent } from './components/administration/user-l
 
 import { RegisterationComponent } from './components/spacy/registeration/registeration.component';
 
-//todos
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-
 ///// focus world : 
 import { TimerComponent } from './components/user/timer/timer.component';
 
@@ -111,10 +105,10 @@ import { HomeComponent } from "./components/user/home/home.component";
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
     CollapseModule.forRoot(),
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonToggleModule
+    //MatCardModule,
+    //MatFormFieldModule,
+    //MatInputModule,
+    //MatButtonToggleModule
    
 
   ],

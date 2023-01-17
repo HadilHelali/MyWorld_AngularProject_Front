@@ -48,12 +48,11 @@ export class todoService {
   }
 
   addTodo(Todo: Todo): Observable<any> {
-    alert("sending")
-    return this.http.post(API_LINK, { "name": Todo.title,
-
+    return this.http.post(API_LINK, { 
+      "name": Todo.name,
        "description": Todo.description,
-      
-       "date": Todo.date},httpOptions);
+      "status": TodoStatusEnum.waiting},
+       httpOptions);
   }
   updateTodo(state:TodoStatusEnum,id){
     return this.http.patch(API_LINK + `/${id}`,state);

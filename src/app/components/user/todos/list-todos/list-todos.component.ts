@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Todo } from '../models/Todo';
 import { todoService } from '../services/todo.service';
 
@@ -8,23 +8,18 @@ import { todoService } from '../services/todo.service';
   styleUrls: ['./list-todos.component.scss']
 })
 export class ListTodosComponent implements OnInit {
-  todos: Todo[];
+  @Input() todos: Todo[];
+ 
+  @Output() DeletedItemInfo : EventEmitter<any> = new EventEmitter()
   
   constructor(private todoService :todoService) { }
 
   ngOnInit(): void {
+
+  }
   
-   this.todoService.getTodos().subscribe(
-      (todos)=>{
-      //  alert("alo")
-        this.todos=todos
-      },
-      (erreur) => {
-        this.todos = this.todoService.getFakeTodos();
-        alert(this.todos[0].title)
-       
-     }
-    )
+  deleteItemInfoList($event) {
+    this.DeletedItemInfo.emit($event)
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TodoStatusEnum } from '../enum/todo-status.enum';
 import { Todo } from '../models/Todo';
 import { todoService } from '../services/todo.service';
 //import { ToastrService } from 'ngx-toastr';
@@ -10,12 +11,14 @@ import { todoService } from '../services/todo.service';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todoInput: Todo;
-  isDeleted=false;
+  isDeleted = false;
   completed: boolean = false;
-  todo: Todo;
+  @Output() DeletedItem : EventEmitter<any> = new EventEmitter()
+
   constructor(public todoService: todoService,/*private toasterService: ToastrService*/) { }
 
   ngOnInit(): void {
+  
   }
 
   onChange() {
@@ -30,8 +33,8 @@ export class TodoItemComponent implements OnInit {
     console.log(e);
   }
   setStatus(status){
-    this.todo.status=status
-    this.todoService.updateTodo(status,this.todo.id).subscribe(data => {
+    this.todoInput.status=status
+    this.todoService.updateTodo(status,this.todoInput.id).subscribe(data => {
       
     },
     err => {
@@ -39,7 +42,8 @@ export class TodoItemComponent implements OnInit {
 
   }
   toggleClass() {
-    if (this.todo.status.valueOf()=="done") {
+
+    if (this.todoInput.status.valueOf()=="done") {
       // return 'list-item-success';
       return { 'list-group-item-success': true, 'border-primary': true };
 
@@ -47,7 +51,7 @@ export class TodoItemComponent implements OnInit {
  
   }
   buttonClass(status){
-    if (this.todo.status.valueOf()=="status") {
+    if (this.todoInput.status.valueOf()=="status") {
       // return 'list-item-success';
       return { "btn btn-primary btn-sm disabled": true };
 
@@ -56,15 +60,8 @@ export class TodoItemComponent implements OnInit {
     }
 
   }
-  deleteTodo(item) {
-    this.isDeleted=true;
-    this.todo = item;
-    this.todoService.deleteTodo(item).subscribe( data => {
-      
-    },
-    err => {
-      console.log("eeeeeeee");});
-   
-  
+  deleteTodoInfo(item) {
+    this.DeletedItem.emit(item)
+
   }
 }

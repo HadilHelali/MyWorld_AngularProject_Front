@@ -3,10 +3,9 @@
     <div class="card-body">
         <ul class="list-group" *ngFor="let todo of todos">
 
-            <app-todo-item [todoInput]="todo" style="margin: 5px;"></app-todo-item>
-            
+            <app-todo-item (DeletedItem)="deleteItemInfoList($event)" 
+            [todoInput]="todo" style="margin: 5px;"></app-todo-item>
         </ul>
-        <pagination class=" justify-content-end" style="margin: 15px;" [(ngModel)]="todos" [todos.length]="2">
-        </pagination>
+    
     </div>
 </div>

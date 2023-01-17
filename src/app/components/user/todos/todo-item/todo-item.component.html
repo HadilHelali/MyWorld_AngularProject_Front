@@ -3,22 +3,33 @@
     <!-- <li class="list-group-item" [ngStyle]="{'background-color: 'completed? 'red : green'}"> -->
     <!-- <li class="list-group-item" [ngClass]="completed ? 'list-group-item-success'  : 'list-group-item-danger' "> -->
     <!-- <li class="list-group-item" [class.list-group-item-success]="completed"> -->
-    <div class="form-check d-inline">
-        <label  style="color: black; font-weight: bold;">{{todoInput.title}} : </label>
-        <label for="complete" class="form-check-label lead" style="color: black;">{{todoInput.description}}</label>
-    </div>
-    <div>
-        <mat-button-toggle-group  name="status" [(ngModel)]="todo.status" aria-label="Font Style">
-            <mat-button-toggle [ngClass]="buttonClass('actif')" value="actif" (click)="setStatus('actif')">Actif</mat-button-toggle>
-            <mat-button-toggle value="waiting" class="badge badge-pill badge-primary"  (click)="setStatus('waiting')">Waiting</mat-button-toggle>
-            <mat-button-toggle value="done"  [ngClass]="buttonClass('done')"(click)="setStatus('done')">Done</mat-button-toggle>
-          </mat-button-toggle-group>
-    </div> 
-    <div class="float-right">
+      <div class="float-right">
         <span class="mx-2">{{todoInput.date | date}}</span>
         
-     <button class="btn btn-danger btn-sm mx-3" (click)="deleteTodo(todoInput.id)">x</button>
+     <button class="btn btn-danger btn-sm mx-3" (click)="deleteTodoInfo(todoInput.id)">x</button>
     </div>
+      <div class="row">
+        <div class="typography-line"><b>{{todoInput.name}} :</b> {{todoInput.description}}</div>
+    </div>
+    <div>
+
+          <div class="row nav-tabs-danger" name="status" aria-label="Font Style" >
+            <div class="col-md-2">
+              <button value="actif"  class="badge badge-pill badge-primary" (click)="setStatus('actif')">Actif</button>
+            </div>
+            <div class="col-md-2">
+              <button value="waiting" class="badge badge-pill badge-primary"  (click)="setStatus('waiting')">
+                Waiting
+              </button>
+            </div>
+            <div class="col-md-2">
+              <button value="done"  [ngClass]="buttonClass('done')"(click)="setStatus('done')">
+                Done
+              </button>
+            </div>
+          </div>
+    </div> 
+   
 </li>
 <!-- [ngClass]="buttonClass('waiting')"
 *ngIf="!isDeleted" 
