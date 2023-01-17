@@ -1,0 +1,88 @@
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: #31102F; //#280B29
+    background: radial-gradient(ellipse at center, rgba(49,16,47,1) 0%, rgba(40,11,41,1) 100%);
+  }
+
+.navbar-brand{
+  color: #fff;
+}
+img.background{
+    position:absolute;
+    bottom:0px;
+}
+
+.background1{
+    position:absolute;
+    top:100px;
+}
+
+.background2{
+    position:absolute;
+    top:100px;
+    right:0px;
+}
+
+.center{
+    padding-top: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.floating1{
+    transform: translateY(0px);
+    transition: transform .2s;
+    animation: float1 6s ease-in-out infinite;
+}
+
+.floating2{
+    transform: translateY(0px);
+    transition: transform .2s;
+    animation: float2 6s ease-in-out infinite;
+}
+
+
+.floating2:hover{
+    transform: scale(1.2);
+    animation-play-state: paused;
+}
+
+.floating1:hover{
+    animation-play-state: paused;
+}
+
+
+.planet1 {position :absolute ; width: 400px ; top: 50px ;
+          margin-bottom: 30px; margin-top: 50px;
+        }
+.planet2 {position :absolute ; top : 0px ; right: 130px;}
+.planet3 {position :absolute ; top : 0px ; left: 130px; width: 130px}
+
+  
+  .hovertext:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background-color: #401C88;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 5px;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .hovertext:hover:before {
+    opacity: 1;
+    visibility: visible;
+  }

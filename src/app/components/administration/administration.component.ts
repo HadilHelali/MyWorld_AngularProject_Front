@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from '../authentification/services/token-storage.service';
 import { AdminService } from './services/admin.service';
 
@@ -12,7 +12,7 @@ export class AdministrationComponent implements OnInit {
   numberCard = '0';
   userid:number
   user:any
-  constructor(private _AdminService:AdminService,private route: ActivatedRoute,private _TokenStorageService:TokenStorageService) { }
+  constructor(private router:Router,private _AdminService:AdminService,private route: ActivatedRoute,private _TokenStorageService:TokenStorageService) { }
 
   ngOnInit(): void {
     this.user=this._TokenStorageService.getUser()
@@ -41,5 +41,9 @@ export class AdministrationComponent implements OnInit {
 getuserdetails(id){
   this.numberCard='1'
   this.getuserById(id)
+}
+logOut(){
+  this._TokenStorageService.signOut()
+  this.router.navigate(['/landing'])
 }
 }

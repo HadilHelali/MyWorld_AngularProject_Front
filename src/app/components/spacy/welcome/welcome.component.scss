@@ -1,0 +1,32 @@
+.background-center{
+position: absolute;
+  top: 10%;
+  left: 30%;
+  height: 600px ;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.text-center{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+position: absolute;
+bottom: 27%;
+left: 38%;
+  z-index: 2;
+}
+.title{
+    margin: 0%;
+    padding: 0%;
+    font-size: 50px;
+}
+
+.content{
+    margin: 0%;
+    padding: 5%;
+}
+.float{
+    animation: float1 6s ease-in-out infinite;
+}
