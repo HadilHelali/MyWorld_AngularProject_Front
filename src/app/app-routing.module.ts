@@ -15,6 +15,7 @@ import { TimerComponent } from "./components/user/timer/timer.component";
 import { UserSpaceComponent } from "./user-space/user-space.component";
 import { WelcomeComponent } from "./components/spacy/welcome/welcome.component";
 import { ArticleComponent } from "./components/user/article/article.component";
+import { AuthGuard } from "./guards/auth-guard";
 
 
 
@@ -29,7 +30,7 @@ const routes: Routes = [
       { path: "register", component: RegisterationComponent }
     ]},
     // the home page after login :
-  { path: "home", component: UserSpaceComponent ,
+  { path: "home", component: UserSpaceComponent , canActivate: [AuthGuard] ,
   children: [
     {path: '', component: HomeComponent},
     // focus world :
@@ -37,7 +38,7 @@ const routes: Routes = [
     // read world :
     { path: "read", component: ArticleComponent},], },
     // Administrator :
-  { path: "Admin", component: AdministrationComponent },  
+  { path: "Admin", component: AdministrationComponent , canActivate: [AuthGuard] },  
 ];
 
 
