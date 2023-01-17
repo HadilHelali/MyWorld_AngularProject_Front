@@ -20,7 +20,8 @@ body {
     font-size: 30px;
 }
 .icon{
-    padding: 1;
+    margin-top: 13px;
+    // margin-bottom: 0px;
 }
 .container{
     bottom: 10%;
@@ -38,7 +39,7 @@ body {
     position: relative; 
     display: flex; 
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     opacity: 0.8;
     border-radius: 50%;
