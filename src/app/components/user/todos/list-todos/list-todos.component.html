@@ -1,0 +1,11 @@
+<div class="card shadow" >
+    <h4 class="card-header">My Todo List</h4>
+    <div class="card-body">
+        <ul class="list-group" *ngFor="let todo of todos">
+
+            <app-todo-item (DeletedItem)="deleteItemInfoList($event)" 
+            [todoInput]="todo" style="margin: 5px;"></app-todo-item>
+        </ul>
+    
+    </div>
+</div>

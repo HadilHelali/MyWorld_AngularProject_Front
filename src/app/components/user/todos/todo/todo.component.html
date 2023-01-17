@@ -1,0 +1,30 @@
+<div class="container">
+<div class="row card-add">
+    <div class="col-md-4" >
+        <div>
+          <section class="ftco-section">
+            <div class="container">
+              <h3 class="text-center mb-4"><b>Add a new Todo</b></h3>
+                <form #addTodo="ngForm" >
+                    <div class="form-group">
+
+                      <input type="text" class="form-control" id="title" placeholder="Todo name" ngModel name="title" required style="color:black ;">
+                    </div>
+                    <div class="form-group">
+
+                      <textarea class="form-control" id="description" placeholder="description" ngModel name="description" style="color:black ;" ></textarea>
+                    </div>
+                    <button type="button" class="btn btn-lg btn-primary justify-content-center"  [disabled]="addTodo.invalid" (click)="onSubmit(addTodo)">Add Todo</button>
+                  </form>
+            </div></section>
+            
+        </div>
+    </div>
+    <div class="col-md-8">
+    <app-list-todos [todos]="todos" (DeletedItemInfo)="deleteItem($event)"></app-list-todos>
+    
+    </div>
+
+</div>
+
+</div>

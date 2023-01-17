@@ -22,6 +22,7 @@ import { AdminProfilecomponementComponent } from './components/administration/ad
 import { UserListcomponementComponent } from './components/administration/user-listcomponement/user-listcomponement.component';
 
 import { RegisterationComponent } from './components/spacy/registeration/registeration.component';
+
 ///// focus world : 
 import { TimerComponent } from './components/user/timer/timer.component';
 
@@ -47,6 +48,9 @@ import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.c
 
 import { UserSpaceComponent } from './user-space/user-space.component';
 import { WelcomeComponent } from './components/spacy/welcome/welcome.component';
+import { TodoComponent } from './components/user/todos/todo/todo.component';
+import { ListTodosComponent } from './components/user/todos/list-todos/list-todos.component';
+import { TodoItemComponent } from './components/user/todos/todo-item/todo-item.component';
 import { ArticleComponent } from './components/user/article/article.component';
 import { AllArticlesComponent } from './components/user/all-articles/all-articles.component';
 import { AddArticleComponent } from './components/user/add-article/add-article.component';
@@ -63,6 +67,7 @@ import { HomeComponent } from "./components/user/home/home.component";
     AuthentificationComponent,
     //// Focus World : 
     TimerComponent,
+
     ////////////////////////////
     // admin
     AdministrationComponent,
@@ -72,6 +77,9 @@ import { HomeComponent } from "./components/user/home/home.component";
     RechercheUserComponent,
     UserSpaceComponent,
     WelcomeComponent,
+    TodoComponent,
+    ListTodosComponent,
+    TodoItemComponent,
     ArticleComponent,
     AllArticlesComponent,
     AddArticleComponent,
@@ -80,7 +88,6 @@ import { HomeComponent } from "./components/user/home/home.component";
     BrowserAnimationsModule, // required animations module
     BrowserModule,
     ReactiveFormsModule, 
-    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     RouterModule,
@@ -88,22 +95,22 @@ import { HomeComponent } from "./components/user/home/home.component";
     BsDropdownModule.forRoot(),
     ProgressbarModule.forRoot(),
     TooltipModule.forRoot(),
-    CollapseModule.forRoot(),
     TabsModule.forRoot(),
     PagesModule,
     ChartModule,
-    PagesModule,
-    ChartModule,
-    BsDropdownModule.forRoot(),
-    ProgressbarModule.forRoot(),
-    TooltipModule.forRoot(),
     TabsModule.forRoot(),
     PaginationModule.forRoot(),
     AlertModule.forRoot(),
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    //MatCardModule,
+    //MatFormFieldModule,
+    //MatInputModule,
+    //MatButtonToggleModule
+   
+
   ],
   providers: [AdminService,authInterceptorProviders],
   bootstrap: [AppComponent]

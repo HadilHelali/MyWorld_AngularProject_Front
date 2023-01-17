@@ -5,6 +5,8 @@ export class ConstantURL {
     /*############################## URL backend  ##############################*/
     public static readonly LOGIN_URL = environment.GlobalApiUrl+"auth/login"
 
+    public static readonly TODO_URL = environment.GlobalApiUrl+"todo"
+    
     /*############################## URL Admin ################################*/
     public static readonly Users_Url= environment.GlobalApiUrl+"admin/allUser"
     public static readonly RecherhceUser_Url= environment.GlobalApiUrl+"admin/rechercheUser"
