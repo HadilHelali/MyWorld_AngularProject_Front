@@ -1,11 +1,11 @@
 {
-  "name": "SPACY",
+  "name": "spacy_world",
   "version": "1.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "description": " ",
+    "description": "Spacy world : Focus world | Toda world | Read world | Admin space ",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/blk-design-system-angular.git"
+    "url": "https://github.com/HadilHelali/MyWorld_AngularProject_Front.git"
   },
   "keywords": [
     "design system",
@@ -56,12 +56,12 @@
     "blk design system",
     "blk design system angular"
   ],
-  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
+  "author": "Soulaima kahla Hadil helali Raoua trimech Asma Smida Salma Yahyaoui",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/blk-design-system-angular/issues"
+  "url": "https://github.com/HadilHelali/MyWorld_AngularProject_Front.git"
   },
-  "homepage": "https://demos.creative-tim.com/blk-design-system-angular/",
+  "homepage": "https://github.com/HadilHelali/MyWorld_AngularProject_Front.git",
   "private": false,
   "dependencies": {
     "@angular/animations": "11.0.5",

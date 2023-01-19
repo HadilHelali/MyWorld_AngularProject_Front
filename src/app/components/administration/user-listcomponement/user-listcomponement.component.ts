@@ -63,7 +63,7 @@ getallUser(pagination){
     data => {
       this.users=data.data
       this.totalPage= Math.trunc(data.count/5);
-      if(data.count/5>1)
+      if(data.count/5>1 || this.totalPage==0 )
       this.totalPage=Math.trunc(data.count/5)+1
     },
     err => {
@@ -77,7 +77,7 @@ RecherhceUser(pagination){
       this.users=data.data
     
       this.totalPage= Math.trunc(data.count/5);
-      if(data.count/5>1)
+      if(data.count/5>1|| this.totalPage==0 )
       this.totalPage=Math.trunc(data.count/5)+1
    
     },
