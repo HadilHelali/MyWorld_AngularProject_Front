@@ -13,7 +13,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let user of users let index = index;" >
-            <td>{{index}}</td>
+            <td>{{index + (pagination)*5}}</td>
             <td >{{user.nom}}</td>
             <td>{{user.prenom}}</td>
             <td>{{user.email}}</td>
