@@ -1,11 +1,11 @@
 {
-  "name": "blk-design-system-angular",
+  "name": "SPACY",
   "version": "1.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "description": "BLK Design System Angular: Free Angular Design System For Bootstrap 4 and Angular",
+    "description": " ",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
