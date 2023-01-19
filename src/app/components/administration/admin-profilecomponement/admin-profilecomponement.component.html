@@ -16,13 +16,13 @@
                                 <div class="col-md-3 px-1">
                                     <div class="form-group">
                                         <label>Login</label>
-                                        <input formControlName="login"  type="text" class="form-control" placeholder="user.login" [(ngModel)]="user.login" [value]="user.login">
+                                        <input formControlName="login"  type="text" class="form-control" placeholder="user.login" [(ngModel)]="user.login" >
                                     </div>
                                 </div>
                                 <div class="col-md-4 pl-1">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
-                                        <input formControlName="email"  type="email" class="form-control" placeholder="email" [(ngModel)]="user.email" [value]="user.email">
+                                        <input formControlName="email"  type="email" class="form-control" name="email" placeholder="email" [(ngModel)]="user.email" >
                                     </div>
                                 </div>
                             </div>
@@ -30,18 +30,18 @@
                                 <div class="col-md-6 pr-1">
                                     <div class="form-group">
                                         <label>Firstname</label>
-                                        <input formControlName="prenom"  type="text" class="form-control" placeholder="user.prenom" [(ngModel)]="user.prenom" [value]="user.prenom">
+                                        <input formControlName="prenom"  type="text" class="form-control" placeholder="user.prenom" [(ngModel)]="user.prenom" >
                                     </div>
                                 </div>
                                 <div class="col-md-6 pl-1">
                                     <div class="form-group">
                                         <label>Lastname</label>
-                                        <input formControlName="nom"  type="text" class="form-control" placeholder="nom" [(ngModel)]="user.nom" [value]="user.nom">
+                                        <input formControlName="nom"  type="text" class="form-control" placeholder="nom" [(ngModel)]="user.nom" >
                                     </div>
                                 </div>
                             </div>
            
-                            <button (click)='update()' type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                            <button (click)='update()' [disabled]="myform.invalid" type="submit" class="submit btn pull-right editbutton">Update Profile</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
@@ -55,7 +55,7 @@
                     
                     <div >
                         <div class="author">
-                            <a href="#">
+                            <a >
                                 <img class="avatar border-gray" src="../assets/img/user.png" alt="...">
                             </a>
                             <br>

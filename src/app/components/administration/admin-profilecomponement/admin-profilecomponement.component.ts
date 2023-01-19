@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from '../../authentification/services/token-storage.service';
 import { AdminService } from '../services/admin.service';
@@ -11,10 +11,10 @@ import { AdminService } from '../services/admin.service';
 })
 export class AdminProfilecomponementComponent implements OnInit {
   myform = new FormGroup({
-    nom : new FormControl('', []),
-    login : new FormControl('', []),
-    email :new FormControl('', []),
-    prenom :new FormControl('', [])
+    nom : new FormControl('',  [Validators.required,Validators.minLength(4)]),
+    login : new FormControl('', [Validators.required,Validators.minLength(4)]),
+    email :new FormControl('', [Validators.email,Validators.required,Validators.minLength(4)]),
+    prenom :new FormControl('', [Validators.required,Validators.minLength(4)])
 });
   constructor(private _TokenStorageService:TokenStorageService,private _AdminService:AdminService) { }
    @Input() user:any
@@ -22,23 +22,26 @@ export class AdminProfilecomponementComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
+ 
   update(){
-  const data={
-    newuser:this.myform.value,
-    userid:this.user.id
-   }
-   this._AdminService.updateUser(data)
-    .subscribe(
-      data => {
-        this.user=data
-
-        if(this.user.roles=='admin')
-        this._TokenStorageService.saveUser(this.user)
-      },
-      err => {
-        
-      });
+    if(this.myform.valid){
+      const data={
+        newuser:this.myform.value,
+        userid:this.user.id
+       }
+       this._AdminService.updateUser(data)
+        .subscribe(
+          data => {
+            this.user=data
+    
+            if(this.user.roles=='admin')
+            this._TokenStorageService.saveUser(this.user)
+          },
+          err => {
+            
+          });
+    }
+ 
   }
 
 }
