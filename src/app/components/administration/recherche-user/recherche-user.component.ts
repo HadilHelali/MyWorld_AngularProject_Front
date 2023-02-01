@@ -1,6 +1,7 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { User } from '../models/User';
 
 @Component({
   selector: 'app-recherche-user',
@@ -11,7 +12,14 @@ export class RechercheUserComponent implements OnInit {
   
   constructor() { }
   @Output() userid=new EventEmitter<string>();
-  newuser:any={}
+  newuser:User={
+    id: '',
+    nom: '',
+    prenom: '',
+    email: '',
+    login: '',
+    roles: ''
+  }
   myform = new FormGroup({
     nom : new FormControl('', []),
     roles :new FormControl('', []),

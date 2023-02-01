@@ -2,6 +2,7 @@ import { ThrowStmt } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from '../models/User';
 import { AdminService } from '../services/admin.service';
 
 @Component({
@@ -10,8 +11,8 @@ import { AdminService } from '../services/admin.service';
   styleUrls: ['./user-listcomponement.component.scss']
 })
 export class UserListcomponementComponent implements OnInit {
-  users:[]
-   @Input() user:any
+  users:User[]
+   @Input() user:User
    @Output() userid=new EventEmitter<string>();
   columns:any
   nomHeader: string;

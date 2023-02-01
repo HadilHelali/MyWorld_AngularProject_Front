@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, Subject } from "rxjs";
 import { ConstantURL } from "src/app/ConstantsUrl";
+import { User } from "../models/User";
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -28,10 +29,9 @@ const httpOptions = {
    
     userBYId(id):Observable<any>{
       const body={userid:id}
-      console.log("body",body)
         return this.http.post(ConstantURL.userById_Url,body)
     }
     updateUser(data){
-      return this.http.post(ConstantURL.UpdateuserById_Url,data)
+      return this.http.post<User>(ConstantURL.UpdateuserById_Url,data)
     }
   }

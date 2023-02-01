@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from '../authentification/services/token-storage.service';
+import { User } from './models/User';
 import { AdminService } from './services/admin.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { AdminService } from './services/admin.service';
 export class AdministrationComponent implements OnInit {
   numberCard = '0';
   userid:number
-  user:any
+  user:User
   constructor(private router:Router,private _AdminService:AdminService,private route: ActivatedRoute,private _TokenStorageService:TokenStorageService) { }
 
   ngOnInit(): void {

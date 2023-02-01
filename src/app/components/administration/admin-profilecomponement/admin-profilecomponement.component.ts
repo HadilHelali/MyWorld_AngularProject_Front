@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from '../../authentification/services/token-storage.service';
+import { User } from '../models/User';
 import { AdminService } from '../services/admin.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class AdminProfilecomponementComponent implements OnInit {
     prenom :new FormControl('', [Validators.required,Validators.minLength(4)])
 });
   constructor(private _TokenStorageService:TokenStorageService,private _AdminService:AdminService) { }
-   @Input() user:any
+   @Input() user:User
   
   ngOnInit(): void {
     
